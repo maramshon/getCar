@@ -4,9 +4,10 @@ var db = mongoose.connection;
 var Schema = mongoose.Schema;
 
 var usersSchema = new Schema({
-  type : String,
-  color:String,
-  price:String
+  name : String,
+  password:String,
+  numberPhon : Number,
+  Email: String
 })
 
 var usersModel = mongoose.model('usersModel',usersSchema);
