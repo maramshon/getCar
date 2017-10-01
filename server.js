@@ -1,4 +1,5 @@
 var express = require("express");
+var db = require("./db/db.js");
 var path = require('path')
 var app = express();
 
@@ -9,8 +10,11 @@ app.get("/",function(req,res){
 })
 
 app.post("/signUp",function(req,res){
-  console.log("data is here")
-  res.end();
+  db.create(req.body,function(err){
+    if(err){
+      throw err;
+    }
+    console.log("data deliverd to db")
 })
 
 app.listen(1994, function(){
