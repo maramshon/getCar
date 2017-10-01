@@ -1,5 +1,5 @@
 var mongoose = require("mongoose");
-var mongoURI = "mongodb://localHost/maram";
+var mongoURI = "mongodb://localHost:27017";
 var db = mongoose.connection;
 var Schema = mongoose.Schema;
 
