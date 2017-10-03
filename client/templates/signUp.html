@@ -3,7 +3,6 @@
 <head>
 	<title></title>
 	<script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.5.6/angular.min.js"></script>
-	<script  src="../modules/signUp.js"></script>
 	
 </head>
 <body ng-app="signUp" ng-controller="signUpController">
@@ -24,7 +23,7 @@
 	</div>
 
 
-	<!-- <script type="text/javascript">
+	<script type="text/javascript">
 		var SignUpApp = angular.module('SignUpApp', []);
 
 		SignUpApp.controller("signUpController",  function($scope, $http){
@@ -43,7 +42,7 @@
 				$scope.newUser.email = "";
 
 				$http.post("/signUp", $scope.newUse).then(function(data){
-					console.log("success post")
+					window.location = "../../index.html"
 				}, function(data){
 					console.log("error??")
 				}) 
@@ -52,6 +51,6 @@
 		});
 
 
-	</script> -->
+	</script>
 </body>
 </html>

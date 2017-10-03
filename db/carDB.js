@@ -4,15 +4,13 @@ var mongoURI = "mongodb://localHost/doaa";
 var db = mongoose.connection;
 var Schema = mongoose.Schema;
 // car schema
-
-var userSchema = new Schema({
-  username: String,
-  password: String,
-  phone: Number,
-  email: String
-});
-
-var User = mongoose.model('User', userSchema);
+var carSchema = new Schema({
+	image: String,
+  type : String,
+  color:String,
+  price:String
+})
+var carModel = mongoose.model('carModel',carSchema);
 
 mongoose.connect(mongoURI,{useMongoClient: true});
 db.once("open", function(){
@@ -20,5 +18,4 @@ db.once("open", function(){
  }).on("error", function(){
    console.log("ERROR CONNECT to db");
  })
-
-module.exports = User;
+module.exports = carModel;
