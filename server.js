@@ -24,6 +24,16 @@ app.get('/data',function(req, res){
 	// res.json(searchTest)
 	// res.end()
 })
+
+app.post("/dataCar",function(req,res){
+	console.log(req.body)
+	car.findOne({type: req.body.type, color: req.body.color, price: req.body.price}, function(err, data){
+		if (data){ console.log(data);
+			res.end("hgjhggggggggjhgjhgjhgjhggggggggggggggggggggggggggg");
+	} else{console.log('wrong')}
+	})
+})
+
 var home = JSON.stringify("http://localhost:5000/index.html");
 app.post("/logIn",function(req,res){
 	console.log(req.body.user)

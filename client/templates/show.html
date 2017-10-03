@@ -1,5 +1,26 @@
-<div class = "show">
-	<img ng-src="{{$ctrl.car.image}}" class="img" >
+<div class = "show" ng-app="dataCar" ng-controller="dataCarController">
+	<img ng-src="{{$ctrl.car.image}}" class="img" ng-click="showData(this.$ctrl.car)">
 	<br/>
 	{{$ctrl.car.type}} color: {{$ctrl.car.color}} price: {{$ctrl.car.price}}
 </div>
+
+<script type="text/javascript">
+	
+	var dataCar = angular.module('dataCar', []);
+
+		dataCar.controller("dataCarController",  function($scope, $http){
+		
+			$scope.showData=function(selectedCar){
+				$scope.car = selectedCar;
+
+				$http.post("/dataCar", $scope.car).then(function(data){
+					// window.location = "../../index.html"
+					console.log(data);
+				}, function(data){
+					console.log("error??")
+				}) 
+			}
+		
+		});
+
+</script>
